@@ -22,8 +22,7 @@
 |email|string|null: false, foreign_key:true|
 
 ### Association
-- has_many :groups_users
-- has_many :groups
+- has_many :groups through :groups_users
 
 
 ## groupsテーブル
@@ -34,8 +33,7 @@
 |group-name|integer|null: false, foreign_key:true|
 
 ### Association
-- has_many :groups_users
-- has_many :users
+- has_many :users through :groups_useers
 
 
 ## messagesテーブル
@@ -43,7 +41,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |message_id|integer|null: false, foreign_key: true|
-|text|text|null: false, foreign_key:true|
+|text|text||
 |photo|image||
 
 ### Association
