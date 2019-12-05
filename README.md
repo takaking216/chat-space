@@ -16,23 +16,25 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, foreign_key:true|
-|password|string|null: false,foreign_key:true|
-|email|string|null: false, foreign_key:true|
+|name|string|null: false|
+|password|string|null: false|
+|email|string|null: false|
 
 ### Association
 - has_many :groups through :groups_users
-
+- belongs_to :message
+- belongs_to :group_user
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|integer|null: false|
+|name|text|null: false|
 
 ### Association
 - has_many :users through :groups_useers
-- belongs_to :message 
+- belongs_to :group_user
+- has_many :messages 
 
 ## messagesテーブル
 
