@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.sideber {
+.sideber{
   position: fixed;
   width:300px;
   color:#ffffff;
@@ -50,7 +50,7 @@
       width:300px;
       background-color: #2f3e51;
 
-      .sideber__menulist--group__box1{
+      &__box1{
         height: 91px;
         width: 260px;
       }
@@ -73,7 +73,7 @@
           padding-bottom: 40px;
       }
 
-      .sideber__menulist--group__box2{
+      &__box2{
         height: 91px;
         width: 260px;
       }
@@ -110,14 +110,14 @@
     display:flex;
     position: relative;
 
-    .main__header--group{
+    &--group{
       height:16px;
       width: 300px;
       padding-top:35px;
       padding-left: 40px;
       font-size: 20px;
     }
-    .main__header--member{
+    &--member{
       height:16px;
       width:200px;
       padding-top:40px;
@@ -126,7 +126,7 @@
       color:#999999;
     }
 
-    .main__header--edit{
+    &--edit{
       height:40px;
       font-size:16px;
       color:#38AEF0;
@@ -146,26 +146,26 @@
     background-color:#fafafa;
     padding-left: 40px;
 
-    .main__chat--user1{
+    &--user1{
       height:16px;
       font-size:16px;
       padding-top: 35px;
 
     }
-    .main__chat--message1{
+    &--message1{
       padding-top: 22px;
       padding-bottom: 46px;
       height:14px;
       font-size: 14px;
       color:#434A54;
     }
-    .main__chat--user2{
+    &--user2{
       height:16px;
       font-size:16px;
       padding-top: 35px;
 
     }
-    .main__chat--message2{
+    &--message2{
       padding-top: 22px;
       padding-bottom: 46px;
       height:14px;
@@ -183,7 +183,7 @@
       position: fixed;
       bottom: 0;
       
-      .main__chat--footer__message{
+      &__message{
         height:50px;
         width: 100%;
         line-height: 50px;
