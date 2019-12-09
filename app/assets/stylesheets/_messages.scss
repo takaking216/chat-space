@@ -1,0 +1,212 @@
+*{
+  box-sizing: border-box;
+}
+
+.sideber{
+  position: fixed;
+  width:300px;
+  color:#ffffff;
+ }
+
+  .sideber__menulist{
+    height:100px;
+    background-color: #253141;
+    padding-right: 20px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+   }
+    .sideber__menulist--edit{
+      height:20px;
+      width:260px;
+      font-size:16px;
+      display: flex;
+      justify-content: space-between;
+     }
+      .sideber__menulist--edit__icon{
+        height:20px;
+        width:60px;
+        display: flex;
+        flex-direction: row-reverse;
+    
+        .sideber__menulist--btn1{
+          color:#ffffff;
+          text-decoration: none;
+         }
+        .sideber__menulist--btn2{
+          color:#ffffff;
+          text-decoration: none;
+          padding-right : 5px;
+         }
+        }
+
+
+
+    .sideber__menulist--group{
+      padding-right: 20px;
+      padding-left: 20px;
+      height:100vh;
+      width:300px;
+      background-color: #2f3e51;
+
+      &__box1{
+        height: 91px;
+        width: 260px;
+      }
+      
+
+        .sideber__menulist--group__box--text1{
+          font-size: 15px;
+          height: 15px;
+          width: 300px;
+         color:#ffffff;
+          padding-top: 20px;
+      }
+ 
+         .sideber__menulist--group__box--text2{
+          font-size: 11px;
+          height: 11px;
+          width: 300px;
+          color:#ffffff;
+          padding-top: 25px;
+          padding-bottom: 40px;
+      }
+
+      &__box2{
+        height: 91px;
+        width: 260px;
+      }
+      
+
+        .sideber__menulist--group__box--text3{
+          font-size: 15px;
+          height: 15px;
+          width: 300px;
+         color:#ffffff;
+          padding-top: 20px;
+      }
+ 
+         .sideber__menulist--group__box--text4{
+          font-size: 11px;
+          height: 11px;
+          width: 300px;
+          color:#ffffff;
+          padding-top: 25px;
+          padding-bottom: 40px;
+      }
+    }
+
+.main{
+  margin-left: 300px;
+  position: fixed;
+  color:#333333;
+ }
+
+  .main__header{
+    height:100px;
+    width: calc(100vw - 300px);
+    background-color:#ffffff;
+    display:flex;
+    position: relative;
+
+    &--group{
+      height:16px;
+      width: 300px;
+      padding-top:35px;
+      padding-left: 40px;
+      font-size: 20px;
+    }
+    &--member{
+      height:16px;
+      width:200px;
+      padding-top:40px;
+      padding-left: 40px;
+      font-size: 12px;
+      color:#999999;
+    }
+
+    &--edit{
+      height:40px;
+      font-size:16px;
+      color:#38AEF0;
+      line-height: 40px;
+      margin: 28px 0 0;
+      padding:0 20px;
+      border:solid 1px #38AEF0;
+      position: absolute;
+      right: 40px;
+      text-decoration: none;
+  }
+}
+
+  .main__chat{
+    width: calc(100vw - 300px);
+    height:77vh;
+    background-color:#fafafa;
+    padding-left: 40px;
+
+    &--user1{
+      height:16px;
+      font-size:16px;
+      padding-top: 35px;
+
+    }
+    &--message1{
+      padding-top: 22px;
+      padding-bottom: 46px;
+      height:14px;
+      font-size: 14px;
+      color:#434A54;
+    }
+    &--user2{
+      height:16px;
+      font-size:16px;
+      padding-top: 35px;
+
+    }
+    &--message2{
+      padding-top: 22px;
+      padding-bottom: 46px;
+      height:14px;
+      font-size: 14px;
+      color:#434A54;
+    }
+  }
+
+    .main__chat--footer{
+      width:100%;
+      background-color:#d2d2d2;
+      display: flex;
+      padding:20px 40px;
+      align-items: center;
+      position: fixed;
+      bottom: 0;
+      
+      &__message{
+        height:50px;
+        width: 100%;
+        line-height: 50px;
+        padding:0 40px 0 10px;
+        background-color:#fafafa;
+        display:flex;
+        justify-content: space-around;
+
+        .main__chat--footer__icon{
+      }
+    }
+      .main__chat--footer__send{
+        height:50px;
+        width:100px;
+        line-height: 50px;
+        text-align: center;
+        background-color: #38AEF0;
+        position: absolute;
+        right:340px;
+        margin-left: 15px;
+        color:white;       
+      }
+  }
+  .main__chat--footer__icon__input{
+    visibility:hidden;
+    padding-left:470px;
+  }
