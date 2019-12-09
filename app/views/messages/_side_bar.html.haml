@@ -1,12 +1,14 @@
 .sideber
   .sideber__menulist
     .sideber__menulist--edit
-      user
+    = current_user.name
     .sideber__menulist--edit__icon
-      = link_to "https://www.#", class: "sideber__menulist--btn1" do
-        = icon('fas', 'cog')
+      = link_to edit_user_path(current_user) do
+        = icon('fas', 'cog', class: 'sideber__menulist--btn1')
+
       = link_to "https://www.#", class: "sideber__menulist--btn2" do
         = icon('fas', 'edit')
+        
 
 
   .sideber__menulist--group
