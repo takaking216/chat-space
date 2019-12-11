@@ -2,30 +2,22 @@
   .main__header
     .main__headers
       .main__header--group
-        group name
+        = @group.name
       .main__header--member
-        誰もおらんで
+        = current_user.name
     
-    = link_to "http://localhost:3000/groups/1/edit", class: "main__header--edit" do
+    = link_to edit_group_path(@group), class: "main__header--edit" do
       edit
 
   .main__chat
-    .main__chat--user1
-      たたた
-    .main__chat--message1
-      めっせーじ
-    .main__chat--user2
-      しょ
-    .main__chat--message2
-      めっせーじ
-  .main__chat--footer
-    .main__chat--footers
-      .main__chat--footer__message
+    .messages
+      = render @messages
+      
+    .main__chat--footer
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'main__chat--footer__message', placeholder: 'type a message'
         .main__chat--footer__message__box
-          なんか書くところ
-        %label{class: "main__chat--footer__massage__icon"}
-          %input{type: "file",class: "main__chat--footer__icon__input"}
-          = icon('fas', 'image')
-          
-    .main__chat--footer__send
-      Send
+          = f.label :image, class: 'main__chat--footer__massage__icon' do
+            = icon('fas', 'image', class: 'main__chat--footer__massage__icon')
+            = f.file_field :image, class: 'main__chat--footer__icon__input'
+        = f.submit 'Send', class: 'main__chat--footer__send'
