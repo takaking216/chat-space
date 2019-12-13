@@ -55,7 +55,7 @@ $(function(){
     .done(function(message){
       var html = buildHTML(message);
       $('.messages').append(html);
-      $('.textbox').val('');
+      $('.main__chat--footer__message').val('');
       $('.main__chat--footer__send').prop('disabled', false);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
     })
