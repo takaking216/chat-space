@@ -97,9 +97,8 @@
 .main{
   width:100vw;
   color:#333333;
- }
 
-  .main__header{
+  &__header{
     box-sizing:border-box;
     margin-left: 300px;
     height:100px;
@@ -138,7 +137,7 @@
       text-decoration: none;
   }
 }
-
+}
   .main__chat{
     margin-left: 300px;
     width: calc(100vw -300px);
@@ -184,12 +183,12 @@
     padding-top:35px;
     display: flex;
 
-    .upper-message__user-name{
+    &__user-name{
       font-size: 16px;
       color:#333333;
     }
 
-    .upper-message__date{
+    &__date{
       padding-left: 10px;
       font-size: 12px;
       color:#999999;
@@ -197,7 +196,7 @@
   }
   .lower-message{
     padding-top:12px;
-    .lower-message__content{
+    &__content{
       font-size: 14px;
       columns: #434a54;
       padding-bottom: 46px;
@@ -225,7 +224,7 @@
         right: 180px;
         top:20px;
         }
-        .main__chat--footer__message__icon{
+        &__message__icon{
           height: 10px;
           width: 10px;
       }
