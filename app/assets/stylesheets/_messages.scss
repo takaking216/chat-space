@@ -95,17 +95,19 @@
     }
 
 .main{
-  margin-left: 300px;
-  position: fixed;
+  width:100vw;
   color:#333333;
  }
 
   .main__header{
+    box-sizing:border-box;
+    margin-left: 300px;
     height:100px;
     width: calc(100vw - 300px);
     background-color:#ffffff;
     display:flex;
     position: relative;
+    position: fixed;
 
     &--group{
       height:16px;
@@ -138,8 +140,9 @@
 }
 
   .main__chat{
-    width: calc(100vw - 300px);
-    height:77vh;
+    margin-left: 300px;
+    width: calc(100vw -300px);
+    height: calc(100vh -190px);
     background-color:#fafafa;
 
     &--user1{
@@ -170,14 +173,16 @@
     }
   }
 .messages{
+  padding-top: 100px;
   padding-left: 40px;
+  overflow: auto;
+  height: calc(100vh - 90px);
 }
 
 .message{
   .upper-message{
     padding-top:35px;
     display: flex;
-    justify-content: flex-start;
 
     .upper-message__user-name{
       font-size: 16px;
@@ -192,15 +197,16 @@
   }
   .lower-message{
     padding-top:12px;
-  }
     .lower-message__content{
       font-size: 14px;
       columns: #434a54;
+      padding-bottom: 46px;
     }
   }
+}
 
 .main__chat--footer{
-      width:100%;
+      width:100vw;
       background-color:#d2d2d2;
       display: flex;
       padding:20px 40px;
@@ -209,13 +215,10 @@
       bottom: 0;
       
       &__message{
-        // height:50px;
         width: calc(100% - 430px);
         line-height: 50px;
         padding:0 40px 0 10px;
         background-color:#fafafa;
-        // display:flex;
-        // justify-content: space-around;
 
         &__box{
         position: absolute;
