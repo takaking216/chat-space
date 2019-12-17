@@ -56,7 +56,6 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      console.log('success');
       var insertHTML = '';
       //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
       $.each(messages, function(i, message) {
@@ -67,7 +66,7 @@ $(function(){
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
     })
     .fail(function() {
-      console.log('error');
+      alert("メッセージ送信に失敗しました");
       });
     }
   }
