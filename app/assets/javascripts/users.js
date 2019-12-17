@@ -56,7 +56,6 @@ $(function() {
       });
   });
   $(document).on("click", ".chat-group-user__btn--add", function() {
-    console.log
     const userName = $(this).attr("data-user-name");
     const userId = $(this).attr("data-user-id");
     $(this)
@@ -71,20 +70,3 @@ $(function() {
       .remove();
   });
 });
-
-// $(`#user-search-result`).on(`click`,'.chat-group-user__btn', function(){
-//   console.log("ok");
-//   var id = $(this).parent().attr('id');
-//   var hidden = <input name="group[user_ids][]" type="hidden" id="${id}" value=${id}>;
-
-//   function  addUser((hidden), id){
-//     var html = `
-//             <div class='chat-group-user'>
-//               <input name='group[user_ids][]' type='hidden' value='ユーザーのid'>  //この記述によりuserがDBに保存される
-//               <p class='chat-group-user__name'>ユーザー名</p>
-//               <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
-//             </div>
-//             `
-//     $(*****).append(html)
-//   }
-// });
