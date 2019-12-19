@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-    if (message.image) {
+    if (message.content && message.image) {
       var html = `<div class="message" data-message-id=${message.id}>
       <div class="upper-message">
         <div class="upper-message__user-name">
@@ -13,12 +13,11 @@ $(function(){
       <div class="lower-message">
         <p class="lower-message__content">
           ${message.content}
-        <img src"${message.image}">
         </p>
-      
+        <img src="${message.image}"," class="lower-message__image" >
       </div>
       </div>`
-      }else{
+      }else if (message.content){
         var html =  `<div class="message" data-message-id=${message.id}>
         <div class="upper-message">
           <div class="upper-message__user-name">
@@ -32,11 +31,25 @@ $(function(){
           <p class="lower-message__content">
             ${message.content}
           </p>
-        
         </div>
         </div>`
+      }else if (message.image) {
+        var html =  `<div class="message" data-message-id=${message.id}>
+        <div class="upper-message">
+          <div class="upper-message__user-name">
+            ${message.user_name}
+          </div>
+          <div class="upper-message__date">
+            ${message.created_at}
+          </div>
+          </div>
+        <div class="lower-message">
+        <img src="${message.image}"," class="lower-message__image" >
+          </p>
+        </div>
+        </div>`
+      }
       return html;
-    }
   }
 
   var reloadMessages = function() {
@@ -45,6 +58,7 @@ $(function(){
     var result = groupList.match(/\/groups\/\d+\/messages/)
 
   last_message_id = $('.message').last().data('message')
+  console.log(last_message_id)
   if(result){
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
@@ -56,14 +70,16 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
+      console.log(messages)
       var insertHTML = '';
       //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
       $.each(messages, function(i, message) {
         insertHTML += buildHTML(message)
-      });
+      })
       //メッセージが入ったHTMLに、入れ物ごと追加
-      $('.messages').append(insertHTML);
-      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+      console.log(insertHTML)
+      $('.main__chat').append(insertHTML);
+      $('.main__chat').animate({ scrollTop: $('.main__chat')[0].scrollHeight});
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
@@ -85,11 +101,12 @@ $(function(){
     })
 
     .done(function(message){
+      console.table(message)
       var html = buildHTML(message);
-      $('.messages').append(html);
+      $('.main__chat').append(html);
       $('.main__chat--footer__message').val('');
       $('.main__chat--footer__send').prop('disabled', false);
-      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+      $('.main__chat').animate({ scrollTop: $('.main__chat')[0].scrollHeight});
     })
     .fail(function(){
       alert("メッセージ送信に失敗しました");

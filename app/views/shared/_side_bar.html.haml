@@ -1,19 +1,19 @@
 .sideber
   .sideber__menulist
     .sideber__menulist--edit
-    = current_user.name
+      = current_user.name
     .sideber__menulist--edit__icon
       = link_to edit_user_path(current_user) do
-        = icon('fas', 'cog', class: 'sideber__menulist--btn1')
+        = icon('fas', 'cog', class:'sideber__menulist--edit__icon--btn1')
 
       = link_to new_group_path do
-        = icon('fas', 'edit',class:'sideber__menulist--btn2')
+        = icon('fas', 'edit',class:'sideber__menulist--edit__icon--btn2')
         
   .sideber__menulist--group
     - current_user.groups.each do |group|
       .sideber__menulist--group__box1
         = link_to group_messages_path(group) do
-          .sideber__menulist--group__box--text1
+          .sideber__menulist--group__box1--text1
             = group.name
-          .sideber__menulist--group__box--text2
+          .sideber__menulist--group__box1--text2
             = group.show_last_message
