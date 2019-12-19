@@ -57,7 +57,8 @@ $(function(){
     var groupList = window.location.href;
     var result = groupList.match(/\/groups\/\d+\/messages/)
 
-  last_message_id = $('.message').last().data('message')
+  last_message_id = $('.message:last').data("message-id");
+  
   console.log(last_message_id)
   if(result){
     $.ajax({
@@ -70,14 +71,14 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      console.log(messages)
+      // console.log(messages)
       var insertHTML = '';
       //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
       $.each(messages, function(i, message) {
         insertHTML += buildHTML(message)
       })
       //メッセージが入ったHTMLに、入れ物ごと追加
-      console.log(insertHTML)
+      // console.log(insertHTML)
       $('.main__chat').append(insertHTML);
       $('.main__chat').animate({ scrollTop: $('.main__chat')[0].scrollHeight});
     })
