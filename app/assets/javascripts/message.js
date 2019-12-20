@@ -80,7 +80,7 @@ $(function(){
       //メッセージが入ったHTMLに、入れ物ごと追加
       // console.log(insertHTML)
       $('.main__chat').append(insertHTML);
-      // $('.main__chat').animate({ scrollTop: $('.main__chat')[0].scrollHeight});
+      $('.main__chat').animate({ scrollTop: $('.main__chat')[0].scrollHeight});
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
